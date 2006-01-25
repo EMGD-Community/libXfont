@@ -1,4 +1,4 @@
-libxfont (1:1.0.0-1) UNRELEASED; urgency=low
+libxfont (1:1.0.0-1) experimental; urgency=low
 
   * First upload to Debian
 
