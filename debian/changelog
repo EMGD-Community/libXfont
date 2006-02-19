@@ -1,3 +1,10 @@
+libxfont (1:1.0.0-2) experimental; urgency=low
+
+  * Have libxfont-dev depend on libfreetype6-dev and libfontenc-dev. Thanks
+    Eugene Konev.
+
+ -- David Nusinow <dnusinow@debian.org>  Sun, 19 Feb 2006 10:08:50 -0500
+
 libxfont (1:1.0.0-1) experimental; urgency=low
 
   * First upload to Debian

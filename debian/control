@@ -39,7 +39,7 @@ Description: X11 font rasterisation library (debug package)
 
 Package: libxfont-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, x11-common, libxfont1 (= ${Source-Version}), libx11-dev, x11proto-core-dev, x11proto-fonts-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, x11-common, libxfont1 (= ${Source-Version}), libx11-dev, x11proto-core-dev, x11proto-fonts-dev, libfreetype6-dev, libfontenc-dev (>= 1:1.0.1-1)
 Pre-Depends: x11-common (>= 1:1.09)
 Replaces: xlibs-static-dev (<< 6.8.2-51)
 Description: X11 font rasterisation library (development headers)
