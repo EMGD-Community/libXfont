@@ -1,3 +1,9 @@
+libxfont (1:1.0.0-3) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- David Nusinow <dnusinow@debian.org>  Thu, 23 Mar 2006 22:44:39 -0500
+
 libxfont (1:1.0.0-2) experimental; urgency=low
 
   * Have libxfont-dev depend on libfreetype6-dev and libfontenc-dev. Thanks
