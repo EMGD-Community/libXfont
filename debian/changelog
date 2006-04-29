@@ -1,3 +1,10 @@
+libxfont (1:1.1.0-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Remove obsolete patch 01_fontserver_fix_SEGV.diff
+
+ -- David Nusinow <dnusinow@debian.org>  Sat, 29 Apr 2006 19:13:03 -0400
+
 libxfont (1:1.0.0-4) unstable; urgency=low
 
   * Reorder makeshlib command in rules file so that ldconfig is run
