@@ -1,8 +1,9 @@
-libxfont (1:1.2.0-3) UNRELEASED; urgency=low
+libxfont (1:1.2.0-3) unstable; urgency=low
 
+  [ Drew Parsons ]
   * dbg package has priority extra.
 
- -- Drew Parsons <dparsons@debian.org>  Sat, 19 Aug 2006 22:16:36 +1000
+ -- David Nusinow <dnusinow@debian.org>  Wed, 30 Aug 2006 18:54:09 -0400
 
 libxfont (1:1.2.0-2) unstable; urgency=high
 
