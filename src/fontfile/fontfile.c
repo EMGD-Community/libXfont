@@ -1,4 +1,4 @@
-/* $XdotOrg: lib/Xfont/src/fontfile/fontfile.c,v 1.5 2005/07/09 06:36:13 keithp Exp $ */
+/* $XdotOrg: xc/lib/font/fontfile/fontfile.c,v 1.4 2005/07/03 07:01:00 daniels Exp $ */
 /* $Xorg: fontfile.c,v 1.4 2001/02/09 02:04:03 xorgcvs Exp $ */
 
 /*
@@ -1010,7 +1010,10 @@ FontFileListOneFontWithInfo (pointer client, FontPathElementPtr fpe,
 			ret = (*scalable->renderer->GetInfoScalable)
 			    (fpe, *pFontInfo, entry, &tmpName, fileName, &vals);
 		    }
-		    if (ranges) xfree(ranges);
+		    if (ranges) {
+			xfree(ranges);
+			ranges = NULL;
+		    }
 		}
 	    }
 	    if (ret == Successful) return ret;

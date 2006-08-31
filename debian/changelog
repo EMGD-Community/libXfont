@@ -1,9 +1,42 @@
+libxfont (1:1.2.0-3) UNRELEASED; urgency=low
+
+  * dbg package has priority extra.
+
+ -- Drew Parsons <dparsons@debian.org>  Sat, 19 Aug 2006 22:16:36 +1000
+
+libxfont (1:1.2.0-2) unstable; urgency=high
+
+  * Apply upstream patch 10_pcf_font.patch (security vulnerability
+    CVE-2006-3467).  Closes: #383353.
+  * Upload to unstable to ensure patch is propagated quickly.
+  * Apply patch 10_freetype_buffer_overflow.patch while we're at it
+    (no known exploits).
+
+ -- Drew Parsons <dparsons@debian.org>  Thu, 17 Aug 2006 07:45:40 +1000
+
+libxfont (1:1.2.0-1) experimental; urgency=low
+
+  * New upstream version. Closes: #364854.
+    - builds and works with Freetype 2.2. Closes: #362920, #370149.
+  * Standards version 3.7.2.
+  * libxfont-dev doesn't need both Depends: and Pre-Depends: x11-common.
+  * Use debhelper 5, tidy up debian/rules to match.
+  * libxfont does not provide libfontcache.so!
+
+ -- Drew Parsons <dparsons@debian.org>  Thu, 27 Jul 2006 15:08:14 +1000
+
 libxfont (1:1.1.0-1) UNRELEASED; urgency=low
 
+  [ David Nusinow ]
   * New upstream release
   * Remove obsolete patch 01_fontserver_fix_SEGV.diff
 
- -- David Nusinow <dnusinow@debian.org>  Sat, 29 Apr 2006 19:13:03 -0400
+  [ Andres Salomon ]
+  * Test for obj-$(DEB_BUILD_GNU_TYPE) before creating it during build;
+    idempotency fix.
+  * Run dh_install w/ --list-missing.
+
+ -- Andres Salomon <dilinger@debian.org>  Mon, 17 Jul 2006 01:20:57 -0400
 
 libxfont (1:1.0.0-4) unstable; urgency=low
 

@@ -203,7 +203,8 @@ sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 INCLUDES = \
-	-I${top_srcdir}/include
+	-I${top_srcdir}/include \
+	-I$(top_srcdir)/src/stubs
 
 noinst_LTLIBRARIES = libutil.la
 libutil_la_SOURCES = \
