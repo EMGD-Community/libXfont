@@ -42,16 +42,16 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
-mkinstalldirs = $(install_sh) -d
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h \
 	$(top_builddir)/include/X11/fonts/fontconf.h
 CONFIG_CLEAN_FILES =
 LTLIBRARIES = $(noinst_LTLIBRARIES)
 libtype1_la_LIBADD =
-am_libtype1_la_OBJECTS = afm.lo arith.lo cidchar.lo curves.lo \
-	fontfcn.lo hints.lo lines.lo objects.lo paths.lo regions.lo \
-	scanfont.lo spaces.lo t1funcs.lo t1info.lo t1io.lo t1malloc.lo \
-	t1snap.lo t1stub.lo t1unicode.lo token.lo type1.lo util.lo
+am_libtype1_la_OBJECTS = arith.lo curves.lo fontfcn.lo hints.lo \
+	lines.lo objects.lo paths.lo regions.lo scanfont.lo spaces.lo \
+	t1funcs.lo t1info.lo t1io.lo t1malloc.lo t1snap.lo t1stub.lo \
+	t1unicode.lo token.lo type1.lo util.lo
 libtype1_la_OBJECTS = $(am_libtype1_la_OBJECTS)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir) -I$(top_builddir)/include/X11/fonts
 depcomp = $(SHELL) $(top_srcdir)/depcomp
@@ -104,6 +104,7 @@ FONTCACHEPROTO_LIBS = @FONTCACHEPROTO_LIBS@
 FREETYPE_CFLAGS = @FREETYPE_CFLAGS@
 FREETYPE_LIBS = @FREETYPE_LIBS@
 FREETYPE_REQUIRES = @FREETYPE_REQUIRES@
+GREP = @GREP@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_SCRIPT = @INSTALL_SCRIPT@
@@ -126,7 +127,6 @@ PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 PKG_CONFIG = @PKG_CONFIG@
 RANLIB = @RANLIB@
-SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
@@ -138,8 +138,6 @@ XFONT_BITMAP_TRUE = @XFONT_BITMAP_TRUE@
 XFONT_BUILTINS_FALSE = @XFONT_BUILTINS_FALSE@
 XFONT_BUILTINS_TRUE = @XFONT_BUILTINS_TRUE@
 XFONT_CFLAGS = @XFONT_CFLAGS@
-XFONT_CID_FALSE = @XFONT_CID_FALSE@
-XFONT_CID_TRUE = @XFONT_CID_TRUE@
 XFONT_FC_FALSE = @XFONT_FC_FALSE@
 XFONT_FC_TRUE = @XFONT_FC_TRUE@
 XFONT_FONTCACHE_FALSE = @XFONT_FONTCACHE_FALSE@
@@ -159,13 +157,9 @@ XFONT_TYPE1_FALSE = @XFONT_TYPE1_FALSE@
 XFONT_TYPE1_TRUE = @XFONT_TYPE1_TRUE@
 X_GZIP_FONT_COMPRESSION = @X_GZIP_FONT_COMPRESSION@
 Z_LIBS = @Z_LIBS@
-ac_ct_AR = @ac_ct_AR@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_CXX = @ac_ct_CXX@
 ac_ct_F77 = @ac_ct_F77@
-ac_ct_RANLIB = @ac_ct_RANLIB@
-ac_ct_STRIP = @ac_ct_STRIP@
-ac_pt_PKG_CONFIG = @ac_pt_PKG_CONFIG@
 am__fastdepCC_FALSE = @am__fastdepCC_FALSE@
 am__fastdepCC_TRUE = @am__fastdepCC_TRUE@
 am__fastdepCXX_FALSE = @am__fastdepCXX_FALSE@
@@ -182,6 +176,9 @@ build_cpu = @build_cpu@
 build_os = @build_os@
 build_vendor = @build_vendor@
 datadir = @datadir@
+datarootdir = @datarootdir@
+docdir = @docdir@
+dvidir = @dvidir@
 exec_prefix = @exec_prefix@
 ft_config = @ft_config@
 host = @host@
@@ -189,17 +186,21 @@ host_alias = @host_alias@
 host_cpu = @host_cpu@
 host_os = @host_os@
 host_vendor = @host_vendor@
+htmldir = @htmldir@
 includedir = @includedir@
 infodir = @infodir@
 install_sh = @install_sh@
 libdir = @libdir@
 libexecdir = @libexecdir@
+localedir = @localedir@
 localstatedir = @localstatedir@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
+pdfdir = @pdfdir@
 prefix = @prefix@
 program_transform_name = @program_transform_name@
+psdir = @psdir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
@@ -209,12 +210,9 @@ INCLUDES = \
 
 noinst_LTLIBRARIES = libtype1.la
 libtype1_la_SOURCES = \
-		afm.c			\
-		AFM.h			\
 		arith.c			\
 		arith.h			\
 		blues.h			\
-		cidchar.c		\
 		cluts.h			\
 		curves.c		\
 		curves.h		\
@@ -232,7 +230,6 @@ libtype1_la_SOURCES = \
 		paths.c			\
 		paths.h			\
 		pictures.h		\
-		range.h			\
 		regions.c		\
 		regions.h		\
 		scanfont.c		\
@@ -310,9 +307,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/afm.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/arith.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cidchar.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/curves.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fontfcn.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hints.Plo@am__quote@
