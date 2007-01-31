@@ -5,6 +5,7 @@ Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: David Nusinow <dnusinow@debian.org>, Branden Robinson <branden@debian.org>, Fabio M. Di Nitto <fabbione@fabbione.net>, Drew Parsons <dparsons@debian.org>
 Build-Depends: debhelper (>= 5), pkg-config, libfontenc-dev, x11proto-core-dev, xtrans-dev, x11proto-fonts-dev, x11proto-fontcache-dev, libfreetype6-dev, quilt
 Standards-Version: 3.7.2
+XS-Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libxfont
 
 Package: libxfont1
 Architecture: any
@@ -16,9 +17,6 @@ Description: X11 font rasterisation library
  More information about X.Org can be found at:
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
- .
- This module can be found as the module 'lib/Xfont' at
- :pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg
 
 Package: libxfont1-dbg
 Architecture: any
@@ -34,9 +32,6 @@ Description: X11 font rasterisation library (debug package)
  More information about X.Org can be found at:
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
- .
- This module can be found as the module 'lib/Xfont' at
- :pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg
 
 Package: libxfont-dev
 Architecture: any
@@ -53,6 +48,3 @@ Description: X11 font rasterisation library (development headers)
  More information about X.Org can be found at:
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
- .
- This module can be found as the module 'lib/Xfont' at
- :pserver:anoncvs@cvs.freedesktop.org:/cvs/xorg
