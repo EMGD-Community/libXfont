@@ -1,3 +1,11 @@
+libxfont (1:1.2.2-2) unstable; urgency=high
+
+  * Grab patch from upstream git to fix security issues:
+    + CVE-2007-1351: BDFFont Parsing Integer Overflow
+    + CVE-2007-1352: fonts.dir File Parsing Integer Overflow
+
+ -- Julien Cristau <jcristau@debian.org>  Tue, 03 Apr 2007 19:31:24 +0200
+
 libxfont (1:1.2.2-1) unstable; urgency=high
 
   * New upstream version.
