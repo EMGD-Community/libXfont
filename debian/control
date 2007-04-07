@@ -6,6 +6,7 @@ Uploaders: David Nusinow <dnusinow@debian.org>, Branden Robinson <branden@debian
 Build-Depends: debhelper (>= 5), pkg-config, libfontenc-dev, x11proto-core-dev, xtrans-dev, x11proto-fonts-dev, x11proto-fontcache-dev, libfreetype6-dev, quilt
 Standards-Version: 3.7.2
 XS-Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libxfont
+XS-Vcs-Browse:  http://git.debian.org/?p=pkg-xorg/lib/libxfont.git
 
 Package: libxfont1
 Architecture: any
