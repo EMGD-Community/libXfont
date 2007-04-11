@@ -1,3 +1,17 @@
+libxfont (1:1.2.7-2) UNRELEASED; urgency=low
+
+  * Add XS-Vcs-Browser to debian/control.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 07 Apr 2007 16:46:18 +0200
+
+libxfont (1:1.2.7-1) experimental; urgency=low
+
+  * New upstream release.
+  * Add XS-Vcs-Git header to debian/control, and drop obsolete CVS information.
+  * Install the upstream ChangeLog.
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 16 Feb 2007 14:32:57 +0100
+
 libxfont (1:1.2.2-2) unstable; urgency=high
 
   * Grab patch from upstream git to fix security issues:
