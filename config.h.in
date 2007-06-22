@@ -54,6 +54,9 @@
 /* Support dynamically loaded font modules */
 #undef LOADABLEFONTS
 
+/* Support os-specific local connections */
+#undef LOCALCONN
+
 /* Name of package */
 #undef PACKAGE
 
