@@ -3,8 +3,10 @@ libxfont (1:1.2.9-1) unstable; urgency=low
   * New upstream version.
     - Add a new 'catalogue' FPE (font path element), which takes font
       paths from symlinks in a dir.
+  * Use libxfont1 (= ${binary:Version}) instead of ${Source-Version}
+    in debian/control.
 
- -- Drew Parsons <dparsons@debian.org>  Sat, 23 Jun 2007 09:08:50 +1000
+ -- Drew Parsons <dparsons@debian.org>  Sat, 23 Jun 2007 09:40:45 +1000
 
 libxfont (1:1.2.8-1) unstable; urgency=low
 

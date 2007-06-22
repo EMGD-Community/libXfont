@@ -22,7 +22,7 @@ Description: X11 font rasterisation library
 Package: libxfont1-dbg
 Architecture: any
 Priority: extra
-Depends: ${shlibs:Depends}, ${misc:Depends}, x11-common, libxfont1 (= ${Source-Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, x11-common, libxfont1 (= ${binary:Version})
 Description: X11 font rasterisation library (debug package)
  libXfont provides various services for X servers, most notably font
  selection and rasterisation (through external libraries).
@@ -36,7 +36,7 @@ Description: X11 font rasterisation library (debug package)
 
 Package: libxfont-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libxfont1 (= ${Source-Version}), libx11-dev, x11proto-core-dev, x11proto-fonts-dev, libfreetype6-dev, libfontenc-dev (>= 1:1.0.1-1)
+Depends: ${shlibs:Depends}, ${misc:Depends}, libxfont1 (= ${binary:Version}), libx11-dev, x11proto-core-dev, x11proto-fonts-dev, libfreetype6-dev, libfontenc-dev (>= 1:1.0.1-1)
 Pre-Depends: x11-common (>= 1:7.0.0)
 Replaces: xlibs-static-dev (<< 6.8.2-51)
 Description: X11 font rasterisation library (development headers)
