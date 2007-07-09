@@ -1,3 +1,9 @@
+libxfont (1:1.2.10-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 09 Jul 2007 15:30:15 +0200
+
 libxfont (1:1.2.9-1) unstable; urgency=low
 
   * New upstream version.
