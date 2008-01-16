@@ -1,4 +1,4 @@
-libxfont (1:1.3.1-2) UNRELEASED; urgency=high
+libxfont (1:1.3.1-2) unstable; urgency=high
 
   * High urgency upload for security fix.
   * Fix a buffer overflow in the PCF font parser (CVE-2008-0006).
@@ -10,7 +10,7 @@ libxfont (1:1.3.1-2) UNRELEASED; urgency=high
     + libxfont1 is Section: libs
     + libxfont-dev and libxfont1-dbg are Section: libdevel
 
- -- Julien Cristau <jcristau@debian.org>  Thu, 17 Jan 2008 00:07:29 +0100
+ -- Julien Cristau <jcristau@debian.org>  Thu, 17 Jan 2008 00:09:38 +0100
 
 libxfont (1:1.3.1-1) unstable; urgency=low
 
