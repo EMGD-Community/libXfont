@@ -11,7 +11,7 @@ Vcs-Browser:  http://git.debian.org/?p=pkg-xorg/lib/libxfont.git
 Package: libxfont1
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, x11-common
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: X11 font rasterisation library
  libXfont provides various services for X servers, most notably font
  selection and rasterisation (through external libraries).
@@ -24,7 +24,7 @@ Package: libxfont1-dbg
 Section: libdevel
 Architecture: any
 Priority: extra
-Depends: ${shlibs:Depends}, ${misc:Depends}, x11-common, libxfont1 (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, libxfont1 (= ${binary:Version})
 Description: X11 font rasterisation library (debug package)
  libXfont provides various services for X servers, most notably font
  selection and rasterisation (through external libraries).
