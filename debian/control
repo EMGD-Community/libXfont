@@ -17,8 +17,12 @@ Description: X11 font rasterisation library
  selection and rasterisation (through external libraries).
  .
  More information about X.Org can be found at:
+ <URL:http://www.X.org>
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXfont
 
 Package: libxfont1-dbg
 Section: libdevel
@@ -33,8 +37,12 @@ Description: X11 font rasterisation library (debug package)
  Non-developers likely have little use for this package.
  .
  More information about X.Org can be found at:
+ <URL:http://www.X.org>
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXfont
 
 Package: libxfont-dev
 Section: libdevel
@@ -50,5 +58,9 @@ Description: X11 font rasterisation library (development headers)
  libxfont1.  Non-developers likely have little use for this package.
  .
  More information about X.Org can be found at:
+ <URL:http://www.X.org>
  <URL:http://xorg.freedesktop.org>
  <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXfont
