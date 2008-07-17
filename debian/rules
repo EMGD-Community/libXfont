@@ -30,7 +30,7 @@ else
 	confflags += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
 endif
 
-confflags += --enable-fc
+confflags += --enable-fc --disable-type1 --disable-speedo
 
 build: patch build-stamp
 build-stamp:
