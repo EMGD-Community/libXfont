@@ -1,3 +1,63 @@
+commit 684c000e57f30344777cf763f2f1b540ef008b38
+Author: Adam Jackson <ajax@redhat.com>
+Date:   Wed Jul 2 15:30:03 2008 -0400
+
+    libXfont 1.3.3
+
+commit 11edbc3a818e15ea2b622b31e6f87159ee68ae4a
+Author: Maarten ter Huurne <maarten.ter.huurne@philips.com>
+Date:   Sat Jun 28 15:34:50 2008 -0400
+
+    Do not call FT_Get_BDF_Charset_ID() if configured with --disable-bdfformat
+    
+    When I configure libXfont-1.3.2 with --disable-bdfformat and link it against
+    FreeType that is built without BDF support, I get the following link error:
+    
+    libXfont.so: undefined reference to ‘FT_Get_BDF_Charset_ID’
+    
+    I fixed it by checking XFONT_BDFFORMAT and if BDF support is disabled, the call
+    to FT_Get_BDF_Charset_ID() is omitted and the result code is set as if the call
+    had failed.
+    
+    Signed-off-by: James Cloos <cloos@jhcloos.com>
+
+commit 1ab07ce0eec4f6c7ed66c7aba3edf8c4315dd907
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Tue May 13 17:26:57 2008 -0700
+
+    FontFileDirectoryChanged: check length of "fonts.alias" as well as "fonts.dir"
+
+commit 0f9db4aa7de6e0644ac9c5811b949e5f936c9d61
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Fri May 9 12:36:30 2008 -0700
+
+    Don't allow a font alias to point to itself and create a loop
+    
+    Part of fix for Sun bug 4258475
+    <http://bugs.opensolaris.org/bugdatabase/view_bug.do?bug_id=4258475>
+
+commit 67311922a2e02d8a763831831b65bb4833db58b5
+Author: Colin Harrison <colin.harrison-at-virgin.net>
+Date:   Mon May 5 22:17:55 2008 +0100
+
+    Fix build for WIN32
+
+commit 6ba408c956ca8e241d10d463c45b4e987b757333
+Author: Matthieu Herrb <matthieu.herrb@laas.fr>
+Date:   Sun Mar 9 08:21:34 2008 +0100
+
+    nuke RCS Ids
+
+commit 754cabe62e91b9ad50c3027c063f4269775f7add
+Author: Julien Cristau <jcristau@debian.org>
+Date:   Fri Mar 7 12:19:22 2008 +0100
+
+    Add missing include in src/FreeType/ftfuncs.c
+    
+    Fixes compiler warning:
+    ../../../src/FreeType/ftfuncs.c: In function 'restrict_code_range_by_str':
+    ../../../src/FreeType/ftfuncs.c:2081: warning: implicit declaration of function 'isspace'
+
 commit 0fd2a1428df56d8b29e148b08dcec2dfed9302fa
 Author: Adam Jackson <ajax@redhat.com>
 Date:   Wed Mar 5 22:04:06 2008 -0500
