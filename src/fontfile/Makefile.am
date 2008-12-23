@@ -5,6 +5,8 @@ INCLUDES =			\
 	-I${top_srcdir}/include \
 	$(FONTENCDEFS)		
 
+AM_CFLAGS = $(XFONT_CFLAGS) $(OS_CFLAGS) $(CWARNFLAGS)
+
 noinst_LTLIBRARIES = libfontfile.la
 
 libfontfile_la_LIBADD = 	\
@@ -28,3 +30,7 @@ libfontfile_la_SOURCES = 	\
 	register.c		\
 	renderers.c		\
 	catalogue.c
+
+if X_BZIP2_FONT_COMPRESSION
+libfontfile_la_SOURCES += bunzip2.c
+endif

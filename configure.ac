@@ -23,7 +23,7 @@ dnl Process this file with autoconf to create configure.
 AC_PREREQ([2.57])
 
 AC_INIT([libXfont],
-	1.3.3,
+	1.3.4,
 	[https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
 	libXfont)
 dnl
@@ -35,6 +35,10 @@ dnl
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_CONFIG_HEADER(config.h)
 AC_CONFIG_HEADERS([include/X11/fonts/fontconf.h])
+
+# Require xorg-macros version >= 1.2.0 for XORG_CWARNFLAGS & XORG_CHANGELOG
+m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.2)
 
 # Check for progs
 AC_PROG_CC
@@ -128,6 +132,19 @@ fi
 AC_DEFINE(X_GZIP_FONT_COMPRESSION,1,[Support gzip for bitmap fonts])
 X_GZIP_FONT_COMPRESSION=1
 AC_SUBST(X_GZIP_FONT_COMPRESSION)
+AC_CHECK_LIB(z, gzopen, [Z_LIBS=-lz], AC_MSG_ERROR([*** zlib is required]))
+
+AC_ARG_WITH(bzip2, 
+	AS_HELP_STRING([--with-bzip2], 
+			[Support bzip2 compressed bitmap fonts]),
+	[], [with_bzip2=no])
+if test "x$with_bzip2" = xyes; then
+	AC_CHECK_LIB(bz2, BZ2_bzopen, [Z_LIBS="$Z_LIBS -lbz2"],
+		AC_MSG_ERROR([*** libbz2 is required for bzip2 support]))
+	AC_DEFINE(X_BZIP2_FONT_COMPRESSION,1,[Support bzip2 for bitmap fonts])
+fi
+AM_CONDITIONAL(X_BZIP2_FONT_COMPRESSION, [test "x$with_bzip2" = xyes ])
+AC_SUBST(Z_LIBS)
 
 AC_ARG_ENABLE(builtins, [ --disable-builtins ], [XFONT_BUILTINS=$enableval], [XFONT_BUILTINS=yes])
 AM_CONDITIONAL(XFONT_BUILTINS, [test "x$XFONT_BUILTINS" = xyes ])
@@ -177,20 +194,6 @@ if test "x$LOADABLE_FONTS" = xyes; then
 fi
 
 #
-# Font cache extension support?
-#
-
-AC_ARG_ENABLE(fontcache, [ --disable-fontcache ],[XFONT_FONTCACHE=$enableval],[XFONT_FONTCACHE=yes])
-AM_CONDITIONAL(XFONT_FONTCACHE, [test "x$XFONT_FONTCACHE" = xyes])
-if test "x$XFONT_FONTCACHE" = xyes; then
-	AC_DEFINE(FONTCACHE,1,[Support the font caching extension])
-	PKG_CHECK_MODULES(FONTCACHEPROTO, fontcacheproto)
-else
-	FONTCACHEPROTO_CFLAGS=""
-fi
-AC_SUBST(FONTCACHEPROTO_CFLAGS)
-
-#
 # Support connection to font servers?
 #
 
@@ -199,9 +202,6 @@ AM_CONDITIONAL(XFONT_FC, [test "x$XFONT_FC" = xyes])
 if test "x$XFONT_FC" = xyes; then
 	AC_DEFINE(XFONT_FC,1,[Support the X Font Services Protocol])
 fi
-
-AC_CHECK_LIB(z, gzopen, [Z_LIBS=-lz
-AC_SUBST(Z_LIBS)], AC_MSG_ERROR([*** zlib is required]))
 
 
 AC_CHECK_LIB(m, hypot, [MATH_LIBS=-lm
@@ -212,12 +212,7 @@ PKG_CHECK_MODULES(XFONT, xproto xtrans fontsproto fontenc)
 # Transport selection macro from xtrans.m4
 XTRANS_CONNECTION_FLAGS
 
-if test "x$GCC" = "xyes"; then
-	GCC_WARNINGS="-Wall -Wpointer-arith -Wstrict-prototypes \
-	-Wmissing-prototypes -Wmissing-declarations \
-	-Wnested-externs -fno-strict-aliasing"
-	CFLAGS="$GCC_WARNINGS $CFLAGS"
-fi
+XORG_CWARNFLAGS
 
 case $host_os in
     linux*)
@@ -230,15 +225,13 @@ case $host_os in
         OS_CFLAGS=
         ;;
 esac
-
-CFLAGS="$CFLAGS $XFONT_CFLAGS $OS_CFLAGS"
-LIBS="$LIBS $XFONT_LIBS"
+AC_SUBST([OS_CFLAGS])
 
 XORG_RELEASE_VERSION
+XORG_CHANGELOG
 
 AC_OUTPUT([Makefile
 	   src/Makefile
-	   src/fontcache/Makefile
 	   src/fontfile/Makefile
 	   src/FreeType/Makefile
 	   src/builtins/Makefile
