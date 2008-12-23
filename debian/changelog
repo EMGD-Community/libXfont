@@ -1,4 +1,4 @@
-libxfont (1:1.3.4-1) UNRELEASED; urgency=low
+libxfont (1:1.3.4-1) experimental; urgency=low
 
   * Wrap build-deps in debian/control.
   * Run autoreconf on build; build-dep on xutils-dev, autoconf, automake and
@@ -7,7 +7,7 @@ libxfont (1:1.3.4-1) UNRELEASED; urgency=low
   * New upstream release.
   * Drop obsolete x11proto-fontcache-dev build-dependency.
 
- -- Julien Cristau <jcristau@debian.org>  Tue, 23 Dec 2008 14:42:17 +0100
+ -- Julien Cristau <jcristau@debian.org>  Tue, 23 Dec 2008 15:06:37 +0100
 
 libxfont (1:1.3.3-1) unstable; urgency=high
 
