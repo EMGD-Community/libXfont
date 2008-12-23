@@ -10,7 +10,6 @@ Build-Depends:
  x11proto-core-dev,
  xtrans-dev,
  x11proto-fonts-dev,
- x11proto-fontcache-dev,
  libfreetype6-dev,
  quilt,
  xutils-dev (>= 1:7.4+4),
