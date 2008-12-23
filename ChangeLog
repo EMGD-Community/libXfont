@@ -1,3 +1,120 @@
+commit 282ac4226195d58e3818e7ac97093e396aa78086
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Fri Dec 19 15:07:21 2008 -0800
+
+    Version bump: 1.3.4
+
+commit 5c631ad798fcdea4f2b7d0b012ac94182fad4184
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Fri Dec 19 14:01:28 2008 -0800
+
+    miscutil.c:108: warning: old-style parameter declaration
+
+commit d21d6c5b23a23f120f32b483ec6b86cf88cb3a98
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Fri Dec 19 13:47:48 2008 -0800
+
+    Add simple README with pointers to bugzilla/git/mailing list
+
+commit d3be1261d29b7d8eda124add3497a93ebe34712c
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Fri Dec 19 13:47:27 2008 -0800
+
+    Update COPYING file with additional copyrights/licenses
+
+commit b5cc4a10c0fe365b40be19613777f192a1ada0db
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Fri Dec 19 13:05:32 2008 -0800
+
+    Use XORG_CWARNFLAGS & XORG_CHANGELOG macros from xorg-macros 1.2
+
+commit 377584bb71ccb2cc380c3a8f71f0acd7e755ad33
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Thu Dec 18 21:22:31 2008 -0800
+
+    Always scan catalogue dirs at startup, even if their mtime < 0
+    
+    Works around bug in VMWare that caused the Solaris kernel to fail to read
+    the time-of-day chip on boot, and start with a time < 0 (i.e. back to the
+    1960's) - when the system was then installed from this mode, Xorg wouldn't
+    start after reboot, since the mtime would be < 0 and the catalogue dir was
+    then skipped as not changed since reading at the 0 initially set in the
+    cat->mtime.
+    
+    Fixes OpenSolaris bug #4780
+       <http://defect.opensolaris.org/bz/show_bug.cgi?id=4780>
+
+commit 9ad7f24fafe876851b89190732034da6fb640788
+Author: Benjamin Close <Benjamin.Close@clearchain.com>
+Date:   Thu Dec 11 15:26:13 2008 +1030
+
+    Make sure font names/font alias names are null terminated
+    
+    This fixes a crash upon server restart where the saved fonts were
+    being restored however strlen(font_name) was incorrect hence memory
+    was being clobbered.
+
+commit d93cc906d4a2f42d11629e245fb13a2d08cf2a61
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Thu Dec 4 16:56:56 2008 -0800
+
+    Pad CreateAC packets with 0 auths to workaround xfs bug
+    
+    Versions of xfs before commit 3fe28a31a2974287acc182c7c9bfd68d94ea6292
+    will reject CreateAC packets with 0 auths unless they claim to have at
+    least 4 bytes of authentication data that isn't actually read.
+
+commit f859a76b0f325b07952ad1c5c818318307c589b0
+Author: Julien Cristau <jcristau@debian.org>
+Date:   Tue Nov 4 19:24:29 2008 +0100
+
+    Don't clobber CFLAGS in configure
+    
+    This lets the user set CFLAGS when running make.
+
+commit 6bf52de1fb84d61b227daf7a7077af9ea3ec27a3
+Author: Peter Breitenlohner <peb@mppmu.mpg.de>
+Date:   Mon Oct 20 19:32:23 2008 -0700
+
+    X.Org Bug 17945: avoid gcc warnings for libXfont
+    
+    <http://bugs.freedesktop.org/show_bug.cgi?id=17945>
+    
+    Avoid two gcc warnings
+    src/fontfile/ffcheck.c:150: warning: initialization discards qualifiers from pointer target type
+    src/fontfile/register.c:98: warning: initialization discards qualifiers from pointer target type
+
+commit b012dcf65b1f0e41def2f595f1b1e7b06a49d275
+Author: Adam Jackson <ajax@redhat.com>
+Date:   Thu Aug 28 15:36:06 2008 -0400
+
+    Retry font server connections faster.
+
+commit 8a6df69750a2d350074715fb31d9d20195d00b4c
+Author: Adam Jackson <ajax@redhat.com>
+Date:   Thu Aug 28 15:35:16 2008 -0400
+
+    Nuke fontcache.
+    
+    Hasn't been relevant since the X-TT merge ages ago.
+
+commit 5d5587a36453d731e9a7353a98fa391dbb51b57d
+Author: Alan Coopersmith <alan.coopersmith@sun.com>
+Date:   Thu Aug 21 19:58:06 2008 -0700
+
+    Add support for bzip2 bitmap font compression
+    
+    Code originally written for Solaris Xsun in 2003, ported now to current Xorg
+    <http://bugs.opensolaris.org/bugdatabase/view_bug.do?bug_id=4819077>
+
+commit 624b7a507cdea25cec0728b4679610df3fb3097c
+Author: Derek Wang <derek.wang@sun.com>
+Date:   Thu Aug 21 16:06:51 2008 -0700
+
+    Sun bug 4510977: dtremote fails to start session
+    
+    <http://bugs.opensolaris.org/bugdatabase/view_bug.do?bug_id=4510977>
+
 commit 684c000e57f30344777cf763f2f1b540ef008b38
 Author: Adam Jackson <ajax@redhat.com>
 Date:   Wed Jul 2 15:30:03 2008 -0400
