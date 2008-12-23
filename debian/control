@@ -12,7 +12,11 @@ Build-Depends:
  x11proto-fonts-dev,
  x11proto-fontcache-dev,
  libfreetype6-dev,
- quilt
+ quilt,
+ xutils-dev (>= 1:7.4+4),
+ autoconf,
+ automake,
+ libtool
 Standards-Version: 3.7.3
 Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libxfont
 Vcs-Browser:  http://git.debian.org/?p=pkg-xorg/lib/libxfont.git

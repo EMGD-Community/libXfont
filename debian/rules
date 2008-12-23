@@ -32,15 +32,20 @@ endif
 
 confflags += --enable-fc --disable-type1 --disable-speedo
 
-build: build-stamp
-build-stamp: $(STAMP_DIR)/patch
-	dh_testdir
+configure: $(STAMP_DIR)/patch
+	autoreconf -vfi
 
-	test -d obj-$(DEB_BUILD_GNU_TYPE) || mkdir obj-$(DEB_BUILD_GNU_TYPE)
+obj-$(DEB_BUILD_GNU_TYPE)/config.status: configure
+	mkdir -p obj-$(DEB_BUILD_GNU_TYPE)
 	cd obj-$(DEB_BUILD_GNU_TYPE) && \
 	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	             --infodir=\$${prefix}/share/info $(confflags) \
 	             CFLAGS="$(CFLAGS)" 
+
+build: build-stamp
+build-stamp: obj-$(DEB_BUILD_GNU_TYPE)/config.status
+	dh_testdir
+
 	cd obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE)
 
 	touch build-stamp
@@ -55,6 +60,9 @@ clean: xsfclean
 	rm -f conftest* */conftest*
 	rm -rf autom4te.cache */autom4te.cache
 	rm -rf obj-*
+	rm -f $$(find -name Makefile.in)
+	rm -f aclocal.m4 config.guess config.h.in config.sub configure
+	rm -f depcomp install-sh ltmain.sh missing mkinstalldirs
 
 	dh_clean
 
