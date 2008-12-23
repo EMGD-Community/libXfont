@@ -3,7 +3,16 @@ Section: x11
 Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: David Nusinow <dnusinow@debian.org>, Drew Parsons <dparsons@debian.org>, Julien Cristau <jcristau@debian.org>
-Build-Depends: debhelper (>= 5), pkg-config, libfontenc-dev, x11proto-core-dev, xtrans-dev, x11proto-fonts-dev, x11proto-fontcache-dev, libfreetype6-dev, quilt
+Build-Depends:
+ debhelper (>= 5),
+ pkg-config,
+ libfontenc-dev,
+ x11proto-core-dev,
+ xtrans-dev,
+ x11proto-fonts-dev,
+ x11proto-fontcache-dev,
+ libfreetype6-dev,
+ quilt
 Standards-Version: 3.7.3
 Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libxfont
 Vcs-Browser:  http://git.debian.org/?p=pkg-xorg/lib/libxfont.git
