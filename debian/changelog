@@ -1,9 +1,9 @@
-libxfont (1:1.4.0-1) UNRELEASED; urgency=low
+libxfont (1:1.4.0-1) unstable; urgency=low
 
   * New upstream release.
   * Move libxfont1-dbg to new section 'debug'.
 
- -- Julien Cristau <jcristau@debian.org>  Mon, 13 Apr 2009 12:02:51 +0100
+ -- Julien Cristau <jcristau@debian.org>  Mon, 13 Apr 2009 12:11:23 +0100
 
 libxfont (1:1.3.4-2) unstable; urgency=low
 
