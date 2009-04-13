@@ -37,7 +37,7 @@ Description: X11 font rasterisation library
  git://anongit.freedesktop.org/git/xorg/lib/libXfont
 
 Package: libxfont1-dbg
-Section: libdevel
+Section: debug
 Architecture: any
 Priority: extra
 Depends: ${shlibs:Depends}, ${misc:Depends}, libxfont1 (= ${binary:Version})

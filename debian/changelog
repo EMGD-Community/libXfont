@@ -1,6 +1,7 @@
 libxfont (1:1.4.0-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * Move libxfont1-dbg to new section 'debug'.
 
  -- Julien Cristau <jcristau@debian.org>  Mon, 13 Apr 2009 12:02:51 +0100
 
