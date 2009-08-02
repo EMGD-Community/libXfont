@@ -24,6 +24,7 @@ Package: libxfont1
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: xprint
 Description: X11 font rasterisation library
  libXfont provides various services for X servers, most notably font
  selection and rasterisation (through external libraries).
