@@ -2,6 +2,7 @@ libxfont (1:1.4.0-2) UNRELEASED; urgency=low
 
   * libxfont1 Conflicts with xprint, printer font support was removed upstream
     in 1.4.0 (closes: #535952).
+  * Add README.source from xsfbs.  Bump Standards-Version to 3.8.2.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 02 Aug 2009 13:17:36 +0200
 
