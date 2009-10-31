@@ -4,8 +4,9 @@ libxfont (1:1.4.0-3) unstable; urgency=low
     The requiem release of xprint (1.6) will not conflict with
     libxfont1. I am assured the garlic wreaths should prove most
     efficacious at protecting the general public from the undead. 
+  * Standards version 3.8.3.
 
- -- Drew Parsons <dparsons@debian.org>  Sat, 31 Oct 2009 11:18:44 +1100
+ -- Drew Parsons <dparsons@debian.org>  Sat, 31 Oct 2009 11:29:34 +1100
 
 libxfont (1:1.4.0-2) unstable; urgency=high
 
