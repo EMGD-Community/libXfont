@@ -37,6 +37,7 @@ doc_files = \
 	obj-$(DEB_BUILD_GNU_TYPE)/doc/fontlib.html
 
 confflags += \
+	--with-bzip2 \
 	--enable-fc \
 	--enable-builtins \
 	--enable-pcfformat \

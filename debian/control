@@ -11,6 +11,8 @@ Build-Depends:
  xtrans-dev,
  x11proto-fonts-dev,
  libfreetype6-dev,
+ zlib1g-dev,
+ libbz2-dev,
  quilt,
  xutils-dev (>= 1:7.5~1),
  autoconf,
