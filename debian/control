@@ -15,7 +15,10 @@ Build-Depends:
  xutils-dev (>= 1:7.5~1),
  autoconf,
  automake,
- libtool
+ libtool,
+# devel-docs
+ xmlto,
+ lynx,
 Standards-Version: 3.8.3
 Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libxfont
 Vcs-Browser:  http://git.debian.org/?p=pkg-xorg/lib/libxfont.git

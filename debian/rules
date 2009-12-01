@@ -31,7 +31,17 @@ else
 	confflags += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
 endif
 
-confflags += --enable-fc --enable-builtins --enable-pcfformat --enable-bdfformat
+doc_files = \
+	doc/fontlib.css \
+	obj-$(DEB_BUILD_GNU_TYPE)/doc/fontlib.txt \
+	obj-$(DEB_BUILD_GNU_TYPE)/doc/fontlib.html
+
+confflags += \
+	--enable-fc \
+	--enable-builtins \
+	--enable-pcfformat \
+	--enable-bdfformat \
+	--enable-devel-docs
 
 configure: $(STAMP_DIR)/patch
 	autoreconf -vfi
@@ -81,6 +91,8 @@ binary-arch: build install
 
 	dh_installdocs
 	dh_install --sourcedir=debian/tmp --list-missing -XlibXfont.la
+	install -d debian/libxfont-dev/usr/share/doc/libxfont-dev
+	install -m 644 $(doc_files) debian/libxfont-dev/usr/share/doc/libxfont-dev
 	dh_installchangelogs ChangeLog
 	dh_link
 	dh_strip --dbg-package=$(PACKAGE)-dbg

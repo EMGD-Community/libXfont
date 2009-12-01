@@ -2,6 +2,7 @@ libxfont (1:1.4.1-1) UNRELEASED; urgency=low
 
   * New upstream release.
   * Bump xutils-dev build-dep for new util-macros.
+  * Build documentation, install it in libxfont-dev.
 
  -- Julien Cristau <jcristau@debian.org>  Tue, 01 Dec 2009 22:22:35 +0100
 
