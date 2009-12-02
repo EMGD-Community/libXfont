@@ -4,6 +4,8 @@ libxfont (1:1.4.1-1) UNRELEASED; urgency=low
   * Bump xutils-dev build-dep for new util-macros.
   * Build documentation, install it in libxfont-dev.
   * Enable support for bzip2 compressed bitmap fonts.
+  * Don't use LDFLAGS from the environment.  Ubuntu sets that to
+    -Bsymbolic-functions, which breaks libXfont's weak symbols usage.
 
  -- Julien Cristau <jcristau@debian.org>  Tue, 01 Dec 2009 22:22:35 +0100
 

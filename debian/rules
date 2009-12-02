@@ -52,7 +52,7 @@ obj-$(DEB_BUILD_GNU_TYPE)/config.status: configure
 	cd obj-$(DEB_BUILD_GNU_TYPE) && \
 	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	             --infodir=\$${prefix}/share/info $(confflags) \
-	             CFLAGS="$(CFLAGS)" 
+	             CFLAGS="$(CFLAGS)" LDFLAGS=""
 
 build: build-stamp
 build-stamp: obj-$(DEB_BUILD_GNU_TYPE)/config.status
