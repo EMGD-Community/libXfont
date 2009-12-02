@@ -1,4 +1,4 @@
-libxfont (1:1.4.1-1) UNRELEASED; urgency=low
+libxfont (1:1.4.1-1) unstable; urgency=low
 
   * New upstream release.
   * Bump xutils-dev build-dep for new util-macros.
@@ -7,7 +7,7 @@ libxfont (1:1.4.1-1) UNRELEASED; urgency=low
   * Don't use LDFLAGS from the environment.  Ubuntu sets that to
     -Bsymbolic-functions, which breaks libXfont's weak symbols usage.
 
- -- Julien Cristau <jcristau@debian.org>  Tue, 01 Dec 2009 22:22:35 +0100
+ -- Julien Cristau <jcristau@debian.org>  Wed, 02 Dec 2009 11:12:13 +0100
 
 libxfont (1:1.4.0-3) unstable; urgency=low
 
