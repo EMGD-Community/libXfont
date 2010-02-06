@@ -7,6 +7,7 @@ libxfont (1:1.4.1-2) UNRELEASED; urgency=low
 
   [ Cyril Brulebois ]
   * Use dh_makeshlibs’s -V argument instead of debian/libxfont1.shlibs
+  * Add udeb needed for the graphical installer: libxfont1-udeb.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 16 Jan 2010 16:47:42 +0000
 
