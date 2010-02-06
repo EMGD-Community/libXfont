@@ -1,8 +1,12 @@
 libxfont (1:1.4.1-2) UNRELEASED; urgency=low
 
+  [ Julien Cristau ]
   * Rename the build directory to not include DEB_BUILD_GNU_TYPE for no
     good reason.  Thanks, Colin Watson!
   * Remove myself from Uploaders
+
+  [ Cyril Brulebois ]
+  * Use dh_makeshlibs’s -V argument instead of debian/libxfont1.shlibs
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 16 Jan 2010 16:47:42 +0000
 
