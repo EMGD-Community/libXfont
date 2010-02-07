@@ -37,7 +37,6 @@ doc_files = \
 	build/doc/fontlib.html
 
 confflags += \
-	--with-bzip2 \
 	--enable-fc \
 	--enable-builtins \
 	--enable-pcfformat \
@@ -52,13 +51,23 @@ build/config.status: configure
 	cd build && \
 	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	             --infodir=\$${prefix}/share/info $(confflags) \
+	             --with-bzip2 \
+	             CFLAGS="$(CFLAGS)" LDFLAGS=""
+
+build-udeb/config.status: configure
+	mkdir -p build-udeb
+	cd build-udeb && \
+	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
+	             --infodir=\$${prefix}/share/info $(confflags) \
+	             --without-bzip2 \
 	             CFLAGS="$(CFLAGS)" LDFLAGS=""
 
 build: build-stamp
-build-stamp: build/config.status
+build-stamp: build/config.status build-udeb/config.status
 	dh_testdir
 
 	cd build && $(MAKE)
+	cd build-udeb && $(MAKE)
 	>$@
 
 clean: xsfclean
@@ -70,7 +79,7 @@ clean: xsfclean
 	rm -f */config.cache */config.log */config.status
 	rm -f conftest* */conftest*
 	rm -rf autom4te.cache */autom4te.cache
-	rm -rf build
+	rm -rf build build-udeb
 	rm -f $$(find -name Makefile.in)
 	rm -f aclocal.m4 config.guess config.h.in config.sub configure
 	rm -f depcomp install-sh ltmain.sh missing mkinstalldirs
@@ -84,6 +93,7 @@ install: build
 	dh_installdirs
 
 	cd build && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
+	cd build-udeb && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp-udeb install
 
 # Build architecture-dependent files here.
 binary-arch: build install
@@ -92,6 +102,7 @@ binary-arch: build install
 
 	dh_installdocs
 	dh_install --sourcedir=debian/tmp --list-missing -XlibXfont.la
+	dh_install -p$(PACKAGE)-udeb --sourcedir=debian/tmp-udeb
 	install -d debian/libxfont-dev/usr/share/doc/libxfont-dev
 	install -m 644 $(doc_files) debian/libxfont-dev/usr/share/doc/libxfont-dev
 	dh_installchangelogs ChangeLog
