@@ -91,6 +91,7 @@ install: build
 	dh_testdir
 	dh_testroot
 	dh_clean -k
+	rm -rf debian/tmp-udeb
 	dh_installdirs
 
 	cd build && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
