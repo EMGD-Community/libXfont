@@ -11,6 +11,7 @@ libxfont (1:1.4.1-2) UNRELEASED; urgency=low
   * Version the B-D on libfontenc-dev to ensure libxfont1-udeb gets a
     dependency on libfontenc1-udeb.
   * Use a bzip2-less flavour for the udeb.
+  * Bump Standards-Version from 3.8.3 to 3.8.4 (no changes needed).
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 16 Jan 2010 16:47:42 +0000
 
