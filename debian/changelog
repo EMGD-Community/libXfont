@@ -3,6 +3,7 @@ libxfont (1:1.4.2-1) UNRELEASED; urgency=low
   * New upstream release.
   * Bump xutils-dev build-dep for new xorg-macros.
   * Bump shlibs for register_fpe_functions().
+  * Update debian/copyright.
 
  -- Julien Cristau <jcristau@debian.org>  Wed, 07 Jul 2010 15:35:21 +0100
 
