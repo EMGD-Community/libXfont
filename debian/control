@@ -14,7 +14,7 @@ Build-Depends:
  zlib1g-dev,
  libbz2-dev,
  quilt,
- xutils-dev (>= 1:7.5~1),
+ xutils-dev (>= 1:7.5+3),
  autoconf,
  automake,
  libtool,
