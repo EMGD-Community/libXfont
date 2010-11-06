@@ -2,6 +2,7 @@ libxfont (1:1.4.3-1) UNRELEASED; urgency=low
 
   * New upstream release.
   * Bump xutils-dev build-dep for new macros.
+  * Add xmlto, xorg-sgml-doctools, and w3m build-dep for the doc.
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 06 Nov 2010 15:05:02 +0100
 
