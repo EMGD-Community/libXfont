@@ -31,11 +31,6 @@ else
 	confflags += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
 endif
 
-doc_files = \
-	doc/fontlib.css \
-	build/doc/fontlib.txt \
-	build/doc/fontlib.html
-
 confflags += \
 	--enable-fc \
 	--enable-builtins \
@@ -105,10 +100,8 @@ binary-arch: build install
 	dh_testroot
 
 	dh_installdocs
-	dh_install --sourcedir=debian/tmp --list-missing -XlibXfont.la
+	dh_install --sourcedir=debian/tmp --fail-missing -XlibXfont.la
 	dh_install -p$(PACKAGE)-udeb --sourcedir=debian/tmp-udeb
-	install -d debian/libxfont-dev/usr/share/doc/libxfont-dev
-	install -m 644 $(doc_files) debian/libxfont-dev/usr/share/doc/libxfont-dev
 	dh_installchangelogs ChangeLog
 	dh_link
 	dh_strip --dbg-package=$(PACKAGE)-dbg

@@ -5,6 +5,7 @@ libxfont (1:1.4.3-1) UNRELEASED; urgency=low
   * Add xmlto, xorg-sgml-doctools, and w3m build-dep for the doc.
   * Pass --with-xmlto and --without-fop for the regular build (we want
     html and txt only). Disable both for the udeb build.
+  * Tweak doc filenames, and handle that through dh_install.
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 06 Nov 2010 15:05:02 +0100
 
