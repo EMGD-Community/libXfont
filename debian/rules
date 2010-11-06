@@ -52,6 +52,7 @@ build/config.status: configure
 	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	             --infodir=\$${prefix}/share/info $(confflags) \
 	             --with-bzip2 \
+	             --with-xmlto --without-fop \
 	             CFLAGS="$(CFLAGS)" LDFLAGS=""
 
 build-udeb/config.status: configure
@@ -60,6 +61,7 @@ build-udeb/config.status: configure
 	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
 	             --infodir=\$${prefix}/share/info $(confflags) \
 	             --without-bzip2 \
+	             --without-xmlto --without-fop \
 	             CFLAGS="$(CFLAGS)" LDFLAGS=""
 
 build: build-stamp
