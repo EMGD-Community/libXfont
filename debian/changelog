@@ -6,6 +6,8 @@ libxfont (1:1.4.3-1) UNRELEASED; urgency=low
   * Pass --with-xmlto and --without-fop for the regular build (we want
     html and txt only). Disable both for the udeb build.
   * Tweak doc filenames, and handle that through dh_install.
+  * Add --fail-missing -XlibXfont.la for the second dh_install call (the
+    udeb one), for additional safety.
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 06 Nov 2010 15:05:02 +0100
 
