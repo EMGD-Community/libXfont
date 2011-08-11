@@ -10,6 +10,7 @@ libxfont (1:1.4.4-1) UNRELEASED; urgency=low
       “Specially crafted LZW stream can crash an application using libXfont
        that is used to open untrusted font files.  With X server, this may
        allow privilege escalation when exploited.”
+  * Update debian/copyright from upstream COPYING.
 
  -- Cyril Brulebois <kibi@debian.org>  Thu, 11 Aug 2011 10:42:01 +0200
 
