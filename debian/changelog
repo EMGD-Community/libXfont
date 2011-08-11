@@ -1,4 +1,4 @@
-libxfont (1:1.4.4-1) UNRELEASED; urgency=low
+libxfont (1:1.4.4-1) UNRELEASED; urgency=high
 
   [ Julien Cristau ]
   * Drop Pre-Depends on x11-common (only needed for upgrades from the
@@ -10,6 +10,7 @@ libxfont (1:1.4.4-1) UNRELEASED; urgency=low
       “Specially crafted LZW stream can crash an application using libXfont
        that is used to open untrusted font files.  With X server, this may
        allow privilege escalation when exploited.”
+  * Set urgency to “high” accordingly.
   * Update debian/copyright from upstream COPYING.
   * Bump xorg-sgml-doctools build-dep.
 
