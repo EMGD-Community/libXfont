@@ -1,4 +1,4 @@
-libxfont (1:1.4.4-1) UNRELEASED; urgency=high
+libxfont (1:1.4.4-1) unstable; urgency=high
 
   [ Julien Cristau ]
   * Drop Pre-Depends on x11-common (only needed for upgrades from the
@@ -15,7 +15,7 @@ libxfont (1:1.4.4-1) UNRELEASED; urgency=high
   * Bump xorg-sgml-doctools build-dep.
   * Drop xorg.css from .install, no longer shipped upstream.
 
- -- Cyril Brulebois <kibi@debian.org>  Thu, 11 Aug 2011 10:42:01 +0200
+ -- Cyril Brulebois <kibi@debian.org>  Thu, 11 Aug 2011 11:17:16 +0200
 
 libxfont (1:1.4.3-2) unstable; urgency=low
 
