@@ -19,7 +19,7 @@ Build-Depends:
  automake,
  libtool,
 # devel-docs
- xmlto, xorg-sgml-doctools (>= 1:1.5), w3m,
+ xmlto, xorg-sgml-doctools (>= 1:1.7), w3m,
 Standards-Version: 3.9.0
 Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libxfont
 Vcs-Browser:  http://git.debian.org/?p=pkg-xorg/lib/libxfont.git

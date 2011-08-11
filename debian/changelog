@@ -11,6 +11,7 @@ libxfont (1:1.4.4-1) UNRELEASED; urgency=low
        that is used to open untrusted font files.  With X server, this may
        allow privilege escalation when exploited.”
   * Update debian/copyright from upstream COPYING.
+  * Bump xorg-sgml-doctools build-dep.
 
  -- Cyril Brulebois <kibi@debian.org>  Thu, 11 Aug 2011 10:42:01 +0200
 
