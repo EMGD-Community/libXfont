@@ -5,5 +5,4 @@ usr/lib/pkgconfig/xfont.pc
 
 # Extra doc, under noinst_* in doc/Makefile.am:
 ../../build/doc/*.html usr/share/doc/libxfont-dev/
-../../build/doc/*.css  usr/share/doc/libxfont-dev/
 ../../build/doc/*.txt  usr/share/doc/libxfont-dev/

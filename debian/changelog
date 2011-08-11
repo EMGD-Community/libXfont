@@ -13,6 +13,7 @@ libxfont (1:1.4.4-1) UNRELEASED; urgency=high
   * Set urgency to “high” accordingly.
   * Update debian/copyright from upstream COPYING.
   * Bump xorg-sgml-doctools build-dep.
+  * Drop xorg.css from .install, no longer shipped upstream.
 
  -- Cyril Brulebois <kibi@debian.org>  Thu, 11 Aug 2011 10:42:01 +0200
 
