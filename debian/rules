@@ -3,13 +3,21 @@
 PACKAGE = libxfont1
 OOT     = --builddirectory=build
 
+CFLAGS   = $(shell dpkg-buildflags --get CFLAGS)
+CFLAGS  += -Wall
+CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
+LDFLAGS  = $(shell dpkg-buildflags --get LDFLAGS)
+
 CONFFLAGS += \
 	--enable-fc \
 	--enable-builtins \
 	--enable-pcfformat \
 	--enable-bdfformat \
 	--enable-devel-docs \
-	--without-fop
+	--without-fop \
+	CFLAGS="$(CFLAGS)" \
+	CPPFLAGS="$(CPPFLAGS)" \
+	LDFLAGS="$(LDFLAGS)"
 
 # Clean:
 override_dh_auto_clean:
