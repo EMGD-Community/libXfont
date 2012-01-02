@@ -27,8 +27,8 @@ override_dh_auto_clean:
 
 # Configuration:
 override_dh_auto_configure:
-	dh_auto_configure $(OOT)-main/ -- $(CONFFLAGS) --with-bzip2 --with-xmlto
-	dh_auto_configure $(OOT)-udeb/ -- $(CONFFLAGS) --without-bzip2 --without-xmlto
+	dh_auto_configure $(OOT)-main/ -- --with-bzip2    --with-xmlto    $(CONFFLAGS)
+	dh_auto_configure $(OOT)-udeb/ -- --without-bzip2 --without-xmlto $(CONFFLAGS)
 
 # Build:
 override_dh_auto_build:
