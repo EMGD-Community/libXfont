@@ -1,122 +1,49 @@
 #!/usr/bin/make -f
-# debian/rules for the Debian libxfont package.
-# Copyright © 2004 Scott James Remnant <scott@netsplit.com>
-# Copyright © 2005 Daniel Stone <daniel@fooishbar.org>
-# Copyright © 2005 David Nusinow <dnusinow@debian.org>
-
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
 
 PACKAGE = libxfont1
+OOT     = --builddirectory=build
 
-include debian/xsfbs/xsfbs.mk
-
-CFLAGS = -Wall -g
-ifneq (,$(filter noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
-ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
-	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
-	MAKEFLAGS += -j$(NUMJOBS)
-endif
-
-DEB_HOST_ARCH      ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
-DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
-DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
-ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
-	confflags += --build=$(DEB_HOST_GNU_TYPE)
-else
-	confflags += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
-endif
-
-confflags += \
+CONFFLAGS += \
 	--enable-fc \
 	--enable-builtins \
 	--enable-pcfformat \
 	--enable-bdfformat \
-	--enable-devel-docs
+	--enable-devel-docs \
+	--without-fop
 
-configure: $(STAMP_DIR)/patch
-	autoreconf -vfi
+# Clean:
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf build-main/ debian/tmp-main/
+	rm -rf build-udeb/ debian/tmp-udeb/
 
-build/config.status: configure
-	mkdir -p build
-	cd build && \
-	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
-	             --infodir=\$${prefix}/share/info $(confflags) \
-	             --with-bzip2 \
-	             --with-xmlto --without-fop \
-	             CFLAGS="$(CFLAGS)" LDFLAGS=""
+# Configuration:
+override_dh_auto_configure:
+	dh_auto_configure $(OOT)-main/ -- $(CONFFLAGS) --with-bzip2 --with-xmlto
+	dh_auto_configure $(OOT)-udeb/ -- $(CONFFLAGS) --without-bzip2 --without-xmlto
 
-build-udeb/config.status: configure
-	mkdir -p build-udeb
-	cd build-udeb && \
-	../configure --prefix=/usr --mandir=\$${prefix}/share/man \
-	             --infodir=\$${prefix}/share/info $(confflags) \
-	             --without-bzip2 \
-	             --without-xmlto --without-fop \
-	             CFLAGS="$(CFLAGS)" LDFLAGS=""
+# Build:
+override_dh_auto_build:
+	$(MAKE) -C build-main/
+	$(MAKE) -C build-udeb/
 
-build: build-stamp
-build-stamp: build/config.status build-udeb/config.status
-	dh_testdir
+# Install:
+override_dh_auto_install:
+	$(MAKE) -C build-main/ install DESTDIR=$(CURDIR)/debian/tmp-main
+	$(MAKE) -C build-udeb/ install DESTDIR=$(CURDIR)/debian/tmp-udeb
 
-	cd build && $(MAKE)
-	cd build-udeb && $(MAKE)
-	>$@
+# Kill *.la files, and forget no-one:
+override_dh_install:
+	find debian/tmp-* -name '*.la' -delete
+	dh_install -a -N$(PACKAGE)-udeb --sourcedir=debian/tmp-main --fail-missing
+	dh_install    -p$(PACKAGE)-udeb --sourcedir=debian/tmp-udeb --fail-missing
 
-clean: xsfclean
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp
-
-	rm -f config.cache config.log config.status
-	rm -f */config.cache */config.log */config.status
-	rm -f conftest* */conftest*
-	rm -rf autom4te.cache */autom4te.cache
-	rm -rf build build-udeb
-	rm -rf debian/tmp-udeb
-	rm -f $$(find -name Makefile.in)
-	rm -f aclocal.m4 config.guess config.h.in config.sub configure
-	rm -f depcomp install-sh ltmain.sh missing mkinstalldirs
-
-	dh_clean
-
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k
-	rm -rf debian/tmp-udeb
-	dh_installdirs
-
-	cd build && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
-	cd build-udeb && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp-udeb install
-
-# Build architecture-dependent files here.
-binary-arch: build install
-	dh_testdir
-	dh_testroot
-
-	dh_installdocs
-	dh_install --sourcedir=debian/tmp --fail-missing -XlibXfont.la
-	dh_install -p$(PACKAGE)-udeb --sourcedir=debian/tmp-udeb --fail-missing -XlibXfont.la
-	dh_installchangelogs ChangeLog
-	dh_link
+override_dh_strip:
 	dh_strip --dbg-package=$(PACKAGE)-dbg
-	dh_compress
-	dh_fixperms
+
+override_dh_makeshlibs:
 	dh_makeshlibs -V'libxfont1 (>= 1:1.4.2)' --add-udeb=$(PACKAGE)-udeb
-	dh_shlibdeps
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
 
-# Build architecture-independent files here.
-binary-indep: build install
-# Nothing to do
+%:
+	dh $@ --with quilt,autoreconf --parallel
 
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install

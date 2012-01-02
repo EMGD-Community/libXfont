@@ -4,7 +4,9 @@ Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: David Nusinow <dnusinow@debian.org>, Drew Parsons <dparsons@debian.org>, Cyril Brulebois <kibi@debian.org>
 Build-Depends:
- debhelper (>= 5),
+ debhelper (>= 8),
+ dh-autoreconf,
+ quilt,
  pkg-config,
  libfontenc-dev (>= 1:1.0.5-2),
  x11proto-core-dev,
@@ -13,11 +15,7 @@ Build-Depends:
  libfreetype6-dev,
  zlib1g-dev,
  libbz2-dev,
- quilt,
  xutils-dev (>= 1:7.5+4),
- autoconf,
- automake,
- libtool,
 # devel-docs
  xmlto, xorg-sgml-doctools (>= 1:1.7), w3m,
 Standards-Version: 3.9.0
