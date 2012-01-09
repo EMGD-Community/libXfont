@@ -2,7 +2,7 @@ libxfont (1:1.4.4-2) UNRELEASED; urgency=low
 
   [ Cyril Brulebois ]
   * Switch to dh:
-    - Build debhelper build-dep and compat.
+    - Bump debhelper build-dep and compat.
     - Rewrite debian/rules, using autoreconf and quilt sequences.
     - Adjust build dependencies accordingly.
     - Use build-main and build-udeb as build directories.
