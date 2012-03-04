@@ -1,6 +1,7 @@
-libxfont (1:1.4.4-2) UNRELEASED; urgency=low
+libxfont (1:1.4.5-1) UNRELEASED; urgency=low
 
   [ Cyril Brulebois ]
+  * New upstream release.
   * Switch to dh:
     - Bump debhelper build-dep and compat.
     - Rewrite debian/rules, using autoreconf and quilt sequences.
