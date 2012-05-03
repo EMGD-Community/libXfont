@@ -1,3 +1,10 @@
+libxfont (1:1.4.5-2) UNRELEASED; urgency=low
+
+  * Ease sync for Ubuntu: strip -Bsymbolic-functions from LDFLAGS
+    (LP: #992745).
+
+ -- Cyril Brulebois <kibi@debian.org>  Thu, 03 May 2012 19:56:15 +0200
+
 libxfont (1:1.4.5-1) unstable; urgency=low
 
   [ Cyril Brulebois ]

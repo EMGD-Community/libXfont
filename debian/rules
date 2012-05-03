@@ -8,6 +8,9 @@ CFLAGS  += -Wall
 CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
 LDFLAGS  = $(shell dpkg-buildflags --get LDFLAGS)
 
+# Strip -Bsymbolic-functions (set by default on Ubuntu) to avoid breakages:
+LDFLAGS := $(LDFLAGS:-Wl,-Bsymbolic-functions=)
+
 CONFFLAGS += \
 	--enable-fc \
 	--enable-builtins \
