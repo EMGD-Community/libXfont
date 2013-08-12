@@ -1,10 +1,10 @@
-libxfont (1:1.4.6-1) UNRELEASED; urgency=low
+libxfont (1:1.4.6-1) unstable; urgency=low
 
   * New upstream release.
   * Build for multiarch (closes: #654252).  Patch by Riku Voipio, thanks!
   * Disable silent build rules.
 
- -- Julien Cristau <jcristau@debian.org>  Mon, 12 Aug 2013 18:15:23 +0200
+ -- Julien Cristau <jcristau@debian.org>  Mon, 12 Aug 2013 18:28:57 +0200
 
 libxfont (1:1.4.5-2) unstable; urgency=low
 
