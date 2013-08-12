@@ -3,6 +3,8 @@
 PACKAGE  = libxfont1
 OOT      = --builddirectory=build
 
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
 CFLAGS   = $(shell dpkg-buildflags --get CFLAGS)
 CFLAGS  += -Wall
 CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
@@ -18,6 +20,7 @@ CONFFLAGS += \
 	--enable-bdfformat \
 	--enable-devel-docs \
 	--without-fop \
+	--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH) \
 	CFLAGS="$(CFLAGS)" \
 	CPPFLAGS="$(CPPFLAGS)" \
 	LDFLAGS="$(LDFLAGS)"

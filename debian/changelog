@@ -1,6 +1,7 @@
 libxfont (1:1.4.6-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * Build for multiarch (closes: #654252).  Patch by Riku Voipio, thanks!
 
  -- Julien Cristau <jcristau@debian.org>  Mon, 12 Aug 2013 18:15:23 +0200
 
