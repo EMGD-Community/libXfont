@@ -1,3 +1,9 @@
+libxfont (1:1.4.6-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 12 Aug 2013 18:15:23 +0200
+
 libxfont (1:1.4.5-2) unstable; urgency=low
 
   * Ease sync for Ubuntu: strip -Bsymbolic-functions from LDFLAGS
