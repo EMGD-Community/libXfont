@@ -14,7 +14,7 @@ LDFLAGS  = $(shell dpkg-buildflags --get LDFLAGS)
 LDFLAGS := $(LDFLAGS:-Wl,-Bsymbolic-functions=)
 
 CONFFLAGS += \
-	--enable-fc \
+	--disable-fc \
 	--enable-builtins \
 	--enable-pcfformat \
 	--enable-bdfformat \

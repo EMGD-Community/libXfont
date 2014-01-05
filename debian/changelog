@@ -2,6 +2,7 @@ libxfont (1:1.4.6-2) UNRELEASED; urgency=low
 
   * Don't put dbg symbols from the udeb in the dbg package.
   * dev package is no longer Multi-Arch: same (closes: #720026).
+  * Disable support for connecting to a font server.
 
  -- Julien Cristau <jcristau@debian.org>  Sun, 18 Aug 2013 02:08:51 +0200
 
