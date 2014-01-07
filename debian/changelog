@@ -1,4 +1,4 @@
-libxfont (1:1.4.7-1) UNRELEASED; urgency=low
+libxfont (1:1.4.7-1) unstable; urgency=high
 
   * New upstream release
     + CVE-2013-6462: unlimited sscanf overflows stack buffer in
@@ -8,7 +8,7 @@ libxfont (1:1.4.7-1) UNRELEASED; urgency=low
   * Disable support for connecting to a font server.  That code is horrible and
     full of holes.
 
- -- Julien Cristau <jcristau@debian.org>  Tue, 07 Jan 2014 17:48:09 +0100
+ -- Julien Cristau <jcristau@debian.org>  Tue, 07 Jan 2014 17:51:29 +0100
 
 libxfont (1:1.4.6-1) unstable; urgency=low
 
