@@ -1,10 +1,14 @@
-libxfont (1:1.4.6-2) UNRELEASED; urgency=low
+libxfont (1:1.4.7-1) UNRELEASED; urgency=low
 
+  * New upstream release
+    + CVE-2013-6462: unlimited sscanf overflows stack buffer in
+      bdfReadCharacters()
   * Don't put dbg symbols from the udeb in the dbg package.
   * dev package is no longer Multi-Arch: same (closes: #720026).
-  * Disable support for connecting to a font server.
+  * Disable support for connecting to a font server.  That code is horrible and
+    full of holes.
 
- -- Julien Cristau <jcristau@debian.org>  Sun, 18 Aug 2013 02:08:51 +0200
+ -- Julien Cristau <jcristau@debian.org>  Tue, 07 Jan 2014 17:48:09 +0100
 
 libxfont (1:1.4.6-1) unstable; urgency=low
 
