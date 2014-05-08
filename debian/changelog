@@ -4,6 +4,8 @@ libxfont (1:1.4.7-2) UNRELEASED; urgency=high
   * CVE-2014-0209: integer overflow of allocations in font metadata
   * CVE-2014-0210: unvalidated length fields when parsing xfs protocol replies
   * CVE-2014-0211: integer overflows calculating memory needs for xfs replies
+  * Add breaks on xfs because we broke it by disabling font protocol support
+    in 1.4.7.
 
  -- Julien Cristau <jcristau@debian.org>  Thu, 08 May 2014 18:39:00 +0200
 

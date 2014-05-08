@@ -27,6 +27,7 @@ Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: xprint (<< 2:1.6.0-1)
+Breaks: xfs (<< 1:1.1.4)
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: X11 font rasterisation library
