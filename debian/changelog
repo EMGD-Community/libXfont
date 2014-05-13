@@ -1,4 +1,4 @@
-libxfont (1:1.4.7-2) UNRELEASED; urgency=high
+libxfont (1:1.4.7-2) unstable; urgency=high
 
   * Pull from upstream git to fix FTBFS with new fontsproto (closes: #746052)
   * CVE-2014-0209: integer overflow of allocations in font metadata
@@ -7,7 +7,7 @@ libxfont (1:1.4.7-2) UNRELEASED; urgency=high
   * Add breaks on xfs because we broke it by disabling font protocol support
     in 1.4.7.
 
- -- Julien Cristau <jcristau@debian.org>  Thu, 08 May 2014 18:39:00 +0200
+ -- Julien Cristau <jcristau@debian.org>  Tue, 13 May 2014 17:25:49 +0200
 
 libxfont (1:1.4.7-1) unstable; urgency=high
 
