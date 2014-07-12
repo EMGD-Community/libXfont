@@ -2,6 +2,7 @@ libxfont (1:1.4.99.901-1) UNRELEASED; urgency=medium
 
   * New upstream release candidate.
     + includes the CVE-2014-{0209,0210,0211} patches
+  * Remove Cyril from Uploaders.
 
  -- Julien Cristau <jcristau@debian.org>  Sat, 12 Jul 2014 17:32:28 +0200
 
