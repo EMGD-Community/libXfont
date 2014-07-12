@@ -34,22 +34,6 @@ from The Open Group.
 #include <config.h>
 #endif
 
-/*
- * Translate monolithic #defines to modular definitions
- */
-
-#ifdef PCFFORMAT
-#define XFONT_PCFFORMAT 1
-#endif
-
-#ifdef SNFFORMAT
-#define XFONT_SNFFORMAT 1
-#endif
-
-#ifdef BDFFORMAT
-#define XFONT_BDFFORMAT 1
-#endif
-
 #include <X11/fonts/fntfilst.h>
 #include <X11/fonts/bitmap.h>
 #include <X11/fonts/fontutil.h>
@@ -60,7 +44,7 @@ from The Open Group.
 #endif
 
 /* Should get this from elsewhere */
-extern unsigned long serverGeneration;
+extern unsigned long __GetServerGeneration(void);
 
 static void bitmapUnloadScalable (FontPtr pFont);
 static void ScaleBitmap ( FontPtr pFont, CharInfoPtr opci,
@@ -597,9 +581,9 @@ ComputeScaledProperties(FontInfoPtr sourceFontInfo, /* the font to be scaled */
     char	*isStringProp;
     int		nProps;
 
-    if (bitscaleGeneration != serverGeneration) {
+    if (bitscaleGeneration != __GetServerGeneration()) {
 	initFontPropTable();
-	bitscaleGeneration = serverGeneration;
+	bitscaleGeneration = __GetServerGeneration();
     }
     nProps = NPROPS + 1 + sizeof(fontPropTable) / sizeof(fontProp) +
 			  sizeof(rawFontPropTable) / sizeof(fontProp);
