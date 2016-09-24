@@ -2,6 +2,7 @@ libxfont (1:1.5.2-1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Use https URL in watch file.
+  * Add Adam Jackson's key to debian/upstream/signing-key.asc.
 
  -- Julien Cristau <jcristau@debian.org>  Fri, 23 Sep 2016 17:19:21 +0200
 
