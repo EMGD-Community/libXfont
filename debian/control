@@ -22,7 +22,7 @@ Vcs-Git: https://anonscm.debian.org/git/pkg-xorg/lib/libxfont.git
 Vcs-Browser: https://anonscm.debian.org/git/pkg-xorg/lib/libxfont.git
 
 Package: libxfont1
-Section: libs
+Section: oldlibs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: xprint (<< 2:1.6.0-1)
