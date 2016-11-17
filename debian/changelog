@@ -1,11 +1,11 @@
-libxfont1 (1:1.5.2-2) UNRELEASED; urgency=medium
+libxfont1 (1:1.5.2-2) unstable; urgency=medium
 
   * Rename source to libxfont1.
   * Rename dev package to libxfont1-dev.
   * control: Move to oldlibs.
   * control: Add myself to uploaders.
 
- -- Timo Aaltonen <tjaalton@debian.org>  Thu, 17 Nov 2016 12:54:47 +0200
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 17 Nov 2016 13:19:18 +0200
 
 libxfont (1:1.5.2-1) unstable; urgency=medium
 
