@@ -1,6 +1,7 @@
 libxfont1 (1:1.5.2-2) UNRELEASED; urgency=medium
 
   * Rename source to libxfont1.
+  * Rename dev package to libxfont1-dev.
 
  -- Timo Aaltonen <tjaalton@debian.org>  Thu, 17 Nov 2016 12:54:47 +0200
 
