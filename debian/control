@@ -40,14 +40,6 @@ Description: X11 font rasterisation library
  This module can be found at
  git://anongit.freedesktop.org/git/xorg/lib/libXfont
 
-Package: libxfont1-udeb
-XC-Package-Type: udeb
-Section: debian-installer
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: X11 font rasterisation library
- This is a udeb, or a microdeb, for the debian-installer.
-
 Package: libxfont1-dbg
 Section: debug
 Architecture: any
