@@ -38,4 +38,4 @@ override_dh_makeshlibs:
 	dh_makeshlibs -V'libxfont1 (>= 1:1.4.2)'
 
 %:
-	dh $@ --with quilt,autoreconf --parallel --builddirectory=build/
+	dh $@ --with quilt --builddirectory=build/
