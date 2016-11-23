@@ -1,11 +1,11 @@
-libxfont1 (1:1.5.2-3) UNRELEASED; urgency=medium
+libxfont1 (1:1.5.2-3) unstable; urgency=medium
 
   * Drop libxfont1-udeb.
   * Switch to -dbgsym.
   * Bump debhelper compat to 10. Drop --with quilt and --parallel flags,
     they are enabled by default now.
 
- -- Timo Aaltonen <tjaalton@debian.org>  Thu, 24 Nov 2016 00:00:12 +0200
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 24 Nov 2016 00:16:53 +0200
 
 libxfont1 (1:1.5.2-2) unstable; urgency=medium
 
