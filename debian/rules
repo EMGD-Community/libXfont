@@ -1,7 +1,5 @@
 #!/usr/bin/make -f
 
-PACKAGE  = libxfont1
-
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 CFLAGS   = $(shell dpkg-buildflags --get CFLAGS)
@@ -34,8 +32,7 @@ override_dh_install:
 	dh_install -a --fail-missing
 
 override_dh_strip:
-	dh_strip -p$(PACKAGE) --dbg-package=$(PACKAGE)-dbg
-	dh_strip -N$(PACKAGE)
+	dh_strip --dbgsym-migration='libxfont2-dbg (<< 1:1.5.2-3~)'
 
 override_dh_makeshlibs:
 	dh_makeshlibs -V'libxfont1 (>= 1:1.4.2)'

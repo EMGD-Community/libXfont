@@ -40,25 +40,6 @@ Description: X11 font rasterisation library
  This module can be found at
  git://anongit.freedesktop.org/git/xorg/lib/libXfont
 
-Package: libxfont1-dbg
-Section: debug
-Architecture: any
-Priority: extra
-Depends: ${shlibs:Depends}, ${misc:Depends}, libxfont1 (= ${binary:Version})
-Multi-Arch: same
-Description: X11 font rasterisation library (debug package)
- libXfont provides various services for X servers, most notably font
- selection and rasterisation (through external libraries).
- .
- This package contains the debug versions of the library found in libxfont1.
- Non-developers likely have little use for this package.
- .
- More information about X.Org can be found at:
- <URL:http://www.X.org>
- .
- This module can be found at
- git://anongit.freedesktop.org/git/xorg/lib/libXfont
-
 Package: libxfont1-dev
 Section: libdevel
 Architecture: any

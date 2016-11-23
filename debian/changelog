@@ -1,6 +1,7 @@
 libxfont1 (1:1.5.2-3) UNRELEASED; urgency=medium
 
   * Drop libxfont1-udeb.
+  * Switch to -dbgsym.
 
  -- Timo Aaltonen <tjaalton@debian.org>  Thu, 24 Nov 2016 00:00:12 +0200
 
