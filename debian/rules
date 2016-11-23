@@ -11,6 +11,8 @@ LDFLAGS  = $(shell dpkg-buildflags --get LDFLAGS)
 LDFLAGS := $(LDFLAGS:-Wl,-Bsymbolic-functions=)
 
 CONFFLAGS += \
+	--with-bzip2 \
+	--with-xmlto \
 	--disable-fc \
 	--enable-builtins \
 	--enable-pcfformat \
@@ -25,7 +27,7 @@ CONFFLAGS += \
 
 
 override_dh_auto_configure:
-	dh_auto_configure -- --with-bzip2    --with-xmlto    $(CONFFLAGS)
+	dh_auto_configure -- $(CONFFLAGS)
 
 override_dh_install:
 	find debian/tmp -name '*.la' -delete
