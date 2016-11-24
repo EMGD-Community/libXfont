@@ -25,7 +25,6 @@ Package: libxfont1
 Section: oldlibs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: xprint (<< 2:1.6.0-1)
 Breaks: xfs (<< 1:1.1.4)
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
