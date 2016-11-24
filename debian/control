@@ -33,7 +33,7 @@ Description: X11 font rasterisation library
  selection and rasterisation (through external libraries).
  .
  More information about X.Org can be found at:
- <URL:http://www.X.org>
+ <URL:https://www.X.org>
  .
  This module can be found at
  git://anongit.freedesktop.org/git/xorg/lib/libXfont
@@ -50,7 +50,7 @@ Description: X11 font rasterisation library (development headers)
  libxfont1.  Non-developers likely have little use for this package.
  .
  More information about X.Org can be found at:
- <URL:http://www.X.org>
+ <URL:https://www.X.org>
  .
  This module can be found at
  git://anongit.freedesktop.org/git/xorg/lib/libXfont

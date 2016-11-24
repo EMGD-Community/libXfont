@@ -3,6 +3,7 @@ libxfont1 (1:1.5.2-4) UNRELEASED; urgency=medium
   * Fix a typo in override_dh_strip.
   * Remove dh-autoreconf build-dep. Not needed with debhelper 10.
   * Remove obsolete Conflicts from pre-wheezy.
+  * Update a bunch of URLs in packaging to https.
 
  -- Andreas Boll <andreas.boll.dev@gmail.com>  Thu, 24 Nov 2016 17:54:29 +0100
 
