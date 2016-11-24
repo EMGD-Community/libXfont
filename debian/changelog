@@ -1,5 +1,6 @@
-libxfont1 (1:1.5.2-4) UNRELEASED; urgency=medium
+libxfont1 (1:1.5.2-4) unstable; urgency=medium
 
+  [ Andreas Boll ]
   * Fix a typo in override_dh_strip.
   * Remove dh-autoreconf build-dep. Not needed with debhelper 10.
   * Remove obsolete Conflicts from pre-wheezy.
@@ -7,7 +8,7 @@ libxfont1 (1:1.5.2-4) UNRELEASED; urgency=medium
   * Remove superfluous --libdir from dh_auto_configure. Not needed with
     debhelper compat level >= 9.
 
- -- Andreas Boll <andreas.boll.dev@gmail.com>  Thu, 24 Nov 2016 17:54:29 +0100
+ -- Timo Aaltonen <tjaalton@debian.org>  Thu, 24 Nov 2016 21:26:43 +0200
 
 libxfont1 (1:1.5.2-3) unstable; urgency=medium
 
