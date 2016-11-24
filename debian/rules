@@ -1,7 +1,5 @@
 #!/usr/bin/make -f
 
-DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-
 CFLAGS   = $(shell dpkg-buildflags --get CFLAGS)
 CFLAGS  += -Wall
 CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
@@ -20,7 +18,6 @@ CONFFLAGS += \
 	--enable-devel-docs \
 	--without-fop \
 	--disable-silent-rules \
-	--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH) \
 	CFLAGS="$(CFLAGS)" \
 	CPPFLAGS="$(CPPFLAGS)" \
 	LDFLAGS="$(LDFLAGS)"
