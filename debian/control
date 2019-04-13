@@ -42,6 +42,7 @@ Package: libxfont1-dev
 Section: libdevel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libxfont1 (= ${binary:Version}), libx11-dev, x11proto-core-dev, x11proto-fonts-dev, libfreetype6-dev, libfontenc-dev (>= 1:1.0.1-1)
+Conflicts: libxfont-dev
 Description: X11 font rasterisation library (development headers)
  libXfont provides various services for X servers, most notably font
  selection and rasterisation (through external libraries).
