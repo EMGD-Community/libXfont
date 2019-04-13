@@ -48,7 +48,7 @@ Description: X11 font rasterisation library (development headers)
  selection and rasterisation (through external libraries).
  .
  This package contains the development headers for the library found in
- libxfont-1.5.2.  Non-developers likely have little use for this package.
+ libxfont1.  Non-developers likely have little use for this package.
  .
  More information about X.Org can be found at:
  <URL:https://www.X.org>
