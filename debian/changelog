@@ -1,6 +1,6 @@
-libxfont-1.5.2 (1:1.5.2-5) UNRELEASED; urgency=medium
+libxfont1 (1:1.5.2-5) UNRELEASED; urgency=medium
 
-  * Renamed packages 
+  * Added conflict with libxfont-dev
 
  -- Tim Stowell <stowellt@gmail.com>  Wed, 10 Apr 2019 03:19:23 +0000
 
