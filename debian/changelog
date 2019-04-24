@@ -1,4 +1,4 @@
-libxfont1 (1.5.2-5) UNRELEASED; urgency=medium
+libxfont1 (1:1.5.2-5) UNRELEASED; urgency=medium
 
   * Added conflict with libxfont-dev
 
